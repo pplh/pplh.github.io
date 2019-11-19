@@ -9,28 +9,10 @@ function makeCode(){
 }
 
 function checkD(){
-  var bar1,bar2;
-  bar1=Number(inpCd.bar1.value);
-  bar2=Number(inpCd.bar2.value);
-  if((isNaN(bar1))||(bar1='')){
-    if((isNaN(bar2))||(bar2='')){
-      alert('数字を入力してください');
-      location.reload();
-    }else{
-      bar2=bar2+370000000000000;
-      inpCd.bar2.value=String(bar2)+String(calcBar(bar2));
-    }
-  }
-  else if((isNaN(bar2))||(bar2='')){
-    bar1=bar1+370000000000000;
-    inpCd.bar1.value=String(bar1)+String(calcBar(bar1));
-  }
-  else{
-    bar1=bar1+370000000000000;
-    bar2=bar2+370000000000000;
-    inpCd.bar1.value=String(bar1)+String(calcBar(bar1));
-    inpCd.bar2.value=String(bar2)+String(calcBar(bar2));
-  }
+  var bar1=Number(inpCd.bar1.value)+370000000000000;
+  var bar2=Number(inpCd.bar2.value)+370000000000000;
+  inpCd.bar1.value=String(bar1)+String(calcBar(bar1));
+  inpCd.bar2.value=String(bar2)+String(calcBar(bar2));
 }
 
 function calcBar(bar){
