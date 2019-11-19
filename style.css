@@ -4,5 +4,5 @@ h1{padding:0;margin:0;width:100%;height:20%;line-height:200%;text-align:center;f
 #barcode1,#barcode2{padding:0;margin:0 auto;width:100%;height:25%;}
 #input{padding:0;margin:0;width:100%;height:30%;}
 #input>form{padding:0;margin:0;width:100%;height:70%;}
-#input>form>input{padding:0 0 0 1px;margin:0;width:99%;text-align:center;vertical-align:middle;height:50%;}
+#input>form>input{padding:0 0 0 1px;margin:0;width:99%;text-align:center;vertical-align:middle;height:50%;font-size:16px;}
 #input>button{padding:0;margin:0;width:50%;height:30%;}
