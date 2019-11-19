@@ -1,11 +1,16 @@
 function reset(){
-  location.reload();
+  inpCd.bar1.value='';
+  inpCd.bar2.value='';
+  $('#barcode1').barcode('0','code128',{barWidth:0,barHeight:0});
+  $('#barcode2').barcode('0','code128',{barWidth:0,barHeight:0});
 }
 
 function makeCode(){
   checkD();
-  $('#barcode1').barcode(inpCd.bar1.value,'code128');
-  $('#barcode2').barcode(inpCd.bar2.value,'code128');
+  if(inpCd.bar1.value=='3700000000000002'||isNaN(Number(inpCd.bar1.value))){inpCd.bar1.value='';}
+  else{$('#barcode1').barcode(inpCd.bar1.value,'code128',{barWidth:1,barHeight:50});}
+  if(inpCd.bar2.value=='3700000000000002'||isNaN(Number(inpCd.bar2.value))){inpCd.bar2.value='';}
+  else{$('#barcode2').barcode(inpCd.bar2.value,'code128',{barWidth:1,barHeight:50});}
 }
 
 function checkD(){
