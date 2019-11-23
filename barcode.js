@@ -9,7 +9,7 @@ function makeCode(){
   checkD();
   if(inpCd.bar1.value=='3700000000000002'||isNaN(Number(inpCd.bar1.value))||inpCd.bar1.value>'3799999999999999'){inpCd.bar1.value='';('#barcode1').barcode('0','code128',{barWidth:0,barHeight:0});}
   else{$('#barcode1').barcode(inpCd.bar1.value,'code128',{barWidth:1,barHeight:50});}
-  if(inpCd.bar2.value=='3700000000000002'||isNaN(Number(inpCd.bar2.value))){inpCd.bar2.value='';}
+  if(inpCd.bar2.value=='3700000000000002'||isNaN(Number(inpCd.bar2.value))||inpCd.bar2.value>'3799999999999999'){inpCd.bar2.value='';('#barcode2').barcode('0','code128',{barWidth:0,barHeight:0});}
   else{$('#barcode2').barcode(inpCd.bar2.value,'code128',{barWidth:1,barHeight:50});}
 }
 
