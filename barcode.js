@@ -1,23 +1,31 @@
 function reset(){
-  inpCd.bar1.value='';
-  inpCd.bar2.value='';
-  $('#barcode1').barcode('0','code128',{barWidth:0,barHeight:0});
-  $('#barcode2').barcode('0','code128',{barWidth:0,barHeight:0});
+  if(String(inpCd.bar1.value).length==16){
+    var bar1=String(inpCd.bar1.value).slice(0,-1);
+    inpCd.bar1.value=Number(bar1)-370000000000000;
+    $('#barcode1').barcode(inpCd.bar1.value,'code128',{barWidth:0,barHeight:0});
+  }
+  if(String(inpCd.bar2.value).length==16){
+    var bar2=String(inpCd.bar2.value).slice(0,-1);
+    inpCd.bar2.value=Number(bar2)-370000000000000;
+    $('#barcode2').barcode(inpCd.bar2.value,'code128',{barWidth:0,barHeight:0});
+  }
 }
 
 function makeCode(){
-  checkD();
-  if(inpCd.bar1.value=='3700000000000002'||isNaN(Number(inpCd.bar1.value))||inpCd.bar1.value>='3800000000000000'){inpCd.bar1.value='';$('#barcode1').barcode('0','code128',{barWidth:0,barHeight:0});}
-  else{$('#barcode1').barcode(inpCd.bar1.value,'code128',{barWidth:1,barHeight:50});}
-  if(inpCd.bar2.value=='3700000000000002'||isNaN(Number(inpCd.bar2.value))||inpCd.bar2.value>='3800000000000000'){inpCd.bar2.value='';$('#barcode2').barcode('0','code128',{barWidth:0,barHeight:0});}
-  else{$('#barcode2').barcode(inpCd.bar2.value,'code128',{barWidth:1,barHeight:50});}
-}
-
-function checkD(){
-  var bar1=Number(inpCd.bar1.value)+370000000000000;
-  var bar2=Number(inpCd.bar2.value)+370000000000000;
-  inpCd.bar1.value=String(bar1)+String(calcBar(bar1));
-  inpCd.bar2.value=String(bar2)+String(calcBar(bar2));
+  if(String(inpCd.bar1.value)==''||String(inpCd.bar1.value).length==16){
+    null;
+  }else{
+    var bar1=Number(inpCd.bar1.value)+370000000000000;
+    inpCd.bar1.value=String(bar1)+String(calcBar(bar1));
+    $('#barcode1').barcode(inpCd.bar1.value,'code128',{barWidth:1,barHeight:50});
+  }
+  if(String(inpCd.bar2.value)==''||String(inpCd.bar2.value).length==16){
+    null;
+  }else{
+    var bar2=Number(inpCd.bar2.value)+370000000000000;
+    inpCd.bar2.value=String(bar2)+String(calcBar(bar2));
+    $('#barcode2').barcode(inpCd.bar2.value,'code128',{barWidth:1,barHeight:50});
+  }
 }
 
 function calcBar(bar){
