@@ -1,4 +1,4 @@
-function reset(){
+function delCode(){
   if(String(inpCd.bar1.value).length==16){
     var bar1=String(inpCd.bar1.value).slice(0,-1);
     inpCd.bar1.value=Number(bar1)-370000000000000;
@@ -9,6 +9,11 @@ function reset(){
     inpCd.bar2.value=Number(bar2)-370000000000000;
     $('#barcode2').barcode(inpCd.bar2.value,'code128',{barWidth:0,barHeight:0});
   }
+}
+
+function barReset(){
+  $('#barcode1').barcode(1,'code128',{barWidth:0,barHeight:0});
+  $('#barcode2').barcode(1,'code128',{barWidth:0,barHeight:0});
 }
 
 function makeCode(){
