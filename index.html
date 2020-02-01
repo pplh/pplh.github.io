@@ -27,7 +27,7 @@
   <h1>ばーこーど</h1>
   <div id='barcode1'></div>
   <div id='barcode2'></div>
-  <div id='input'><form method='get' name='inpCd'><input type='tel' name='bar1' maxlength='13' placeholder='13ケタまでの数字を入力'><input type='tel' name='bar2' maxlength='13' placeholder='13ケタまでの数字を入力'><input id='inp_r' type='reset' onClick='barReset()' value='リセット'></form><button onClick='reset()'>13ケタ</button><button onClick='makeCode()'>16ケタ</button></div>
+  <div id='input'><form method='get' name='inpCd'><input type='tel' name='bar1' maxlength='13' placeholder='13ケタまでの数字を入力'><input type='tel' name='bar2' maxlength='13' placeholder='13ケタまでの数字を入力'><input id='inp_r' type='reset' onClick='barReset()' value='リセット'></form><button onClick='delCode()'>13ケタ</button><button onClick='makeCode()'>16ケタ</button></div>
   <script>
     if('serviceWorker' in navigator){
       navigator.serviceWorker
