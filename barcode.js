@@ -1,10 +1,12 @@
 function delCode(){
-  if(String(inpCd.bar1.value).length==16){
+  if(String(inpCd.bar1.value).length==19){
+    inpCd.bar1.value=inpCd.bar1.value.replace('-','');
     var bar1=String(inpCd.bar1.value).slice(0,-1);
     inpCd.bar1.value=Number(bar1)-370000000000000;
     $('#barcode1').barcode(inpCd.bar1.value,'code128',{barWidth:0,barHeight:0});
   }
-  if(String(inpCd.bar2.value).length==16){
+  if(String(inpCd.bar2.value).length==19){
+    inpCd.bar2.value=inpCd.bar2.value.replace('-','');
     var bar2=String(inpCd.bar2.value).slice(0,-1);
     inpCd.bar2.value=Number(bar2)-370000000000000;
     $('#barcode2').barcode(inpCd.bar2.value,'code128',{barWidth:0,barHeight:0});
@@ -17,12 +19,19 @@ function barReset(){
 }
 
 function makeCode(){
+  var b1,b2,b3,b4,bi;
+  bi='-';
   if(String(inpCd.bar1.value)==''||String(inpCd.bar1.value).length==16){
     null;
   }else{
     var bar1=Number(inpCd.bar1.value)+370000000000000;
     inpCd.bar1.value=String(bar1)+String(calcBar(bar1));
     $('#barcode1').barcode(inpCd.bar1.value,'code128',{barWidth:1,barHeight:50});
+    b1=inpCd.bar1.value.slice(0,4);
+    b2=inpCd.bar1.value.slice(4,8);
+    b3=inpCd.bar1.value.slice(8,12);
+    b4=inpCd.bar1.value.slice(12,16);
+    inpCd.bar1.value=b1+bi+b2+bi+b3+bi+b4;
   }
   if(String(inpCd.bar2.value)==''||String(inpCd.bar2.value).length==16){
     null;
@@ -30,6 +39,11 @@ function makeCode(){
     var bar2=Number(inpCd.bar2.value)+370000000000000;
     inpCd.bar2.value=String(bar2)+String(calcBar(bar2));
     $('#barcode2').barcode(inpCd.bar2.value,'code128',{barWidth:1,barHeight:50});
+    b1=inpCd.bar2.value.slice(0,4);
+    b2=inpCd.bar2.value.slice(4,8);
+    b3=inpCd.bar2.value.slice(8,12);
+    b4=inpCd.bar2.value.slice(12,16);
+    inpCd.bar2.value=b1+bi+b2+bi+b3+bi+b4;
   }
 }
 
