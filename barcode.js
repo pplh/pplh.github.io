@@ -16,6 +16,8 @@ function delCode(){
 function barReset(){
   $('#barcode1').barcode(1,'code128',{barWidth:0,barHeight:0});
   $('#barcode2').barcode(1,'code128',{barWidth:0,barHeight:0});
+  inpCd.bar1.value='';
+  inpCd.bar2.value='';
 }
 
 function makeCode(){
