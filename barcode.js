@@ -12,14 +12,12 @@ function delCode(){
     $('#barcode2').barcode(inpCd.bar2.value,'code128',{barWidth:0,barHeight:0});
   }
 }
-
 function barReset(){
   $('#barcode1').barcode(1,'code128',{barWidth:0,barHeight:0});
   $('#barcode2').barcode(1,'code128',{barWidth:0,barHeight:0});
   inpCd.bar1.value='';
   inpCd.bar2.value='';
 }
-
 function makeCode(){
   var b1,b2,b3,b4,bi;
   bi='-';
@@ -48,7 +46,6 @@ function makeCode(){
     inpCd.bar2.value=b1+bi+b2+bi+b3+bi+b4;
   }
 }
-
 function calcBar(bar){
   var a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,num;
   bar=String(bar);
