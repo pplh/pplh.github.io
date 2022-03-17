@@ -14,14 +14,14 @@
   <meta name='msapplication-TileColor' content='#000'>
   <meta name='theme-color' content='#000'>
   <title>バーコード作成</title>
-  <script src='jquery-1.12.4.min.js'></script>
-  <script src='jquery-barcode.min.js'></script>
-  <script src='barcode.js'></script>
-  <link rel='stylesheet' href='style.css'>
+  <script src='/jquery-1.12.4.min.js'></script>
+  <script src='/jquery-barcode.min.js'></script>
+  <script src='/barcode.js'></script>
+  <link rel='stylesheet' href='/style.css'>
   <link rel='canonical' href='https://pplh.github.io/'>
-  <link rel='manifest' href='manifest.json'>
-  <link rel=icon sizes=192x192 href=icon192.png>
-  <link rel=apple-touch-icon href=icon192.png>
+  <link rel='manifest' href='/manifest.json'>
+  <link rel=icon sizes=192x192 href=/icon192.png>
+  <link rel=apple-touch-icon href=/icon192.png>
 </head>
 <body>
   <h1>ばーこーど</h1>
@@ -39,7 +39,7 @@
   <script>
     if('serviceWorker' in navigator){
       navigator.serviceWorker
-               .register('sw.js')
+               .register('/sw.js')
                .then(function(){console.log("Service Worker Registered");});
     }
   </script>
